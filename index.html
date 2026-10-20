@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b0d18">
+  <title>رسالة صغيرة لَـ لين 🤍</title>
+
+  <!-- الخطوط العربية الفاخرة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Kufi+Arabic:wght@400;600;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #1f0812;
+      --bg-card: rgba(45, 15, 28, 0.85);
+      --border-gold: rgba(230, 180, 100, 0.35);
+      --gold-glow: #f0c27b;
+      --rose-pink: #e882a5;
+      --deep-crimson: #a8325a;
+      --text-light: #fff3f7;
+      --text-muted: #d4aab8;
+      --snap-yellow: #FFFC00;
+      --shadow-royal: 0 30px 100px rgba(0, 0, 0, 0.6), 0 0 40px rgba(232, 130, 165, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text-light);
+      font-family: "Tajawal", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 50% 10%, #3d1224 0%, #1a050e 70%, #0d0207 100%);
+      background-attachment: fixed;
+    }
+
+    /* خلفية تساقط أوراق الورد */
+    .petal-field {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      top: -35px;
+      width: 12px;
+      height: 18px;
+      border-radius: 80% 10% 80% 10%;
+      background: linear-gradient(135deg, #f3a3be, #a8325a);
+      opacity: 0;
+      animation: petal-fall linear infinite;
+    }
+
+    .petal:nth-child(1) { left: 10%; animation-duration: 14s; animation-delay: -2s; }
+    .petal:nth-child(2) { left: 25%; animation-duration: 18s; animation-delay: -7s; transform: scale(0.8); }
+    .petal:nth-child(3) { left: 55%; animation-duration: 16s; animation-delay: -4s; }
+    .petal:nth-child(4) { left: 78%; animation-duration: 20s; animation-delay: -11s; transform: scale(0.75); }
+    .petal:nth-child(5) { left: 92%; animation-duration: 15s; animation-delay: -1s; }
+
+    @keyframes petal-fall {
+      0% { opacity: 0; transform: translateY(-5vh) rotate(0deg); }
+      15% { opacity: 0.7; }
+      100% { opacity: 0; transform: translateY(105vh) rotate(360deg); }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 30px 15px;
+    }
+
+    .card {
+      width: min(780px, 100%);
+      position: relative;
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-gold);
+      border-radius: 36px;
+      padding: clamp(24px, 5vw, 50px);
+      box-shadow: var(--shadow-royal);
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow {
+      font-family: "Noto Kufi Arabic", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--gold-glow);
+    }
+
+    .actions-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* زر تشغيل الأغنية الحقيقية */
+    .music-btn {
+      background: rgba(240, 194, 123, 0.15);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-glow);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: "Tajawal", sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .music-btn:hover {
+      background: rgba(240, 194, 123, 0.3);
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      color: var(--rose-pink);
+      background: rgba(232, 130, 165, 0.12);
+      border: 1px solid rgba(232, 130, 165, 0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    /* أنميشن القلب والوردتين */
+    .art-container {
+      text-align: center;
+      margin: 10px auto 20px;
+      position: relative;
+    }
+
+    .art {
+      width: min(380px, 100%);
+      height: auto;
+      overflow: visible;
+    }
+
+    .heart-line-loop {
+      fill: none;
+      stroke: url(#goldGradient);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: continuousDraw 4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      filter: drop-shadow(0 0 12px rgba(240, 194, 123, 0.6));
+    }
+
+    .heart-fill-pulse {
+      fill: rgba(232, 130, 165, 0.15);
+      animation: heartPulse 2s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .flower-stem {
+      stroke: #8eb59a;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .flower-petal {
+      fill: none;
+      stroke: #e882a5;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+    }
+
+    .flower-leaf {
+      fill: #c4dfc8;
+      stroke: #8eb59a;
+      stroke-width: 1.2;
+    }
+
+    @keyframes continuousDraw {
+      0% { stroke-dashoffset: 600; }
+      50% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -600; }
+    }
+
+    @keyframes heartPulse {
+      0% { transform: scale(0.98); opacity: 0.2; }
+      100% { transform: scale(1.04); opacity: 0.45; }
+    }
+
+    .leen-name {
+      font-family: "Amiri", serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      fill: #ffffff;
+      text-anchor: middle;
+      filter: drop-shadow(0 0 10px var(--gold-glow));
+    }
+
+    h1 {
+      font-family: "Noto Kufi Arabic", sans-serif;
+      text-align: center;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: #ffffff;
+      margin: 15px 0 10px;
+      line-height: 1.4;
+    }
+
+    .intro {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 0 auto 25px;
+      max-width: 580px;
+    }
+
+    .memory-badge {
+      background: linear-gradient(135deg, rgba(240, 194, 123, 0.1), rgba(232, 130, 165, 0.08));
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 16px 20px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .memory-title {
+      font-size: 0.85rem;
+      color: var(--gold-glow);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .memory-date {
+      font-family: "Noto Kufi Arabic", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .letter {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: clamp(20px, 4vw, 32px);
+      line-height: 2.1;
+      font-size: 1.05rem;
+      font-family: "Amiri", serif;
+      color: #fce8f0;
+    }
+
+    .letter h2 {
+      font-family: "Noto Kufi Arabic", sans-serif;
+      color: var(--rose-pink);
+      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .little-promise {
+      margin-top: 20px;
+      background: rgba(240, 194, 123, 0.08);
+      border-right: 4px solid var(--gold-glow);
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-family: "Tajawal", sans-serif;
+      font-size: 0.98rem;
+      color: var(--text-light);
+    }
+
+    .choices-area {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    .choices-title {
+      font-family: "Noto Kufi Arabic", sans-serif;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .choices-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .choice {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(232, 130, 165, 0.3);
+      border-radius: 18px;
+      padding: 16px 12px;
+      color: #ffffff;
+      font-family: "Tajawal", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .choice:hover {
+      background: rgba(232, 130, 165, 0.2);
+      border-color: var(--rose-pink);
+      transform: translateY(-3px);
+    }
+
+    .choice.primary {
+      background: linear-gradient(135deg, var(--deep-crimson), var(--rose-pink));
+      border: none;
+      box-shadow: 0 8px 20px rgba(168, 50, 90, 0.4);
+    }
+
+    .choice.primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(168, 50, 90, 0.6);
+    }
+
+    .response {
+      display: none;
+      margin-top: 25px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-gold);
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .response.show { display: block; }
+
+    .response h3 {
+      font-family: "Noto Kufi Arabic", sans-serif;
+      color: var(--gold-glow);
+      margin: 0 0 8px;
+    }
+
+    .response p {
+      margin: 0;
+      line-height: 1.9;
+      color: #ffffff;
+    }
+
+    .share-area {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .share-area.show { display: block; }
+
+    .snap-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 380px;
+      background: var(--snap-yellow);
+      color: #000000;
+      font-family: "Noto Kufi Arabic", sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 252, 0, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .snap-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 252, 0, 0.45);
+    }
+
+    .share-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .choices { grid-template-columns: 1fr; }
+      .card { padding: 20px 16px; }
+      .leen-name { font-size: 2.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- تساقط أوراق الورد -->
+  <div class="petal-field" aria-hidden="true">
+    <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+  </div>
+
+  <!-- مشغل الصوت الحقيقي: يمكنك استبدال الرابط أدناه برابط أي أغنية MP3 مباشرة تريدها -->
+  <audio id="romantic-audio" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="page">
+    <article class="card">
+      
+      <div class="topline">
+        <span class="eyebrow">من أنس لـ لين 🤍</span>
+        <div class="actions-top">
+          <button class="music-btn" id="music-toggle" type="button">🎵 تشغيل الأغنية</button>
+          <span class="tag">محاولة تراضي رقم… خلّينا ما نعدّ 😂 </span>
+        </div>
+      </div>
+
+      <!-- القلب المستمر والوردتين الجانبيتين واسم لِين -->
+      <div class="art-container">
+        <svg class="art" viewBox="0 0 380 220">
+          <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f0c27b" />
+              <stop offset="50%" stop-color="#e882a5" />
+              <stop offset="100%" stop-color="#f0c27b" />
+            </linearGradient>
+          </defs>
+          
+          <!-- الوردة اليسرى -->
+          <g transform="translate(45, 130)">
+            <path class="flower-stem" d="M15 70 Q10 40 25 10"/>
+            <path class="flower-leaf" d="M18 45 Q-2 38 0 25 Q18 30 20 42Z"/>
+            <path class="flower-petal" d="M22 12 C10 5 13 -4 23 -3 C23 -14 36 -12 37 -3 C48 -7 53 4 43 12 C38 22 28 21 22 12Z"/>
+          </g>
+
+          <!-- الوردة اليمنى -->
+          <g transform="translate(305, 130) scale(-1, 1)">
+            <path class="flower-stem" d="M15 70 Q10 40 25 10"/>
+            <path class="flower-leaf" d="M18 45 Q-2 38 0 25 Q18 30 20 42Z"/>
+            <path class="flower-petal" d="M22 12 C10 5 13 -4 23 -3 C23 -14 36 -12 37 -3 C48 -7 53 4 43 12 C38 22 28 21 22 12Z"/>
+          </g>
+
+          <!-- القلب المتواصل -->
+          <path class="heart-fill-pulse" d="M190 180 C163 157 110 119 110 80 C110 45 154 34 190 75 C226 34 270 45 270 80 C270 119 217 157 190 180Z" />
+          <path class="heart-line-loop" d="M190 180 C163 157 110 119 110 80 C110 45 154 34 190 75 C226 34 270 45 270 80 C270 119 217 157 190 180Z" />
+          
+          <!-- اسم لِين بالخط العربي الفاخر -->
+          <text x="190" y="128" class="leen-name">لِين</text>
+        </svg>
+      </div>
+
+      <h1>لين… بتسمحيلي أحاول أراضيكي؟</h1>
+      <p class="intro">مش رح أطوّل عليكي، بس عندي كلمتين من قلبي… ومعهم محاولة صغيرة أطلع منك ابتسامة، حتى لو عالسريع 😅</p>
+
+      <div class="memory-badge">
+        <div class="memory-title">✨ اللحظة الأولى والوقت المميز اللي اتعرفنا فيه ✨</div>
+        <div class="memory-date">يوم الأحد 18 / 10 / 2026 — الساعة 12:50 AM[cite: 3]</div>
+      </div>
+
+      <section class="letter">
+        <h2>يا لين، أنا آسف من قلبي</h2>
+        <p>
+          أنا ندمان من قلبي وبعتذرلك عن جد. والله ما كان ودي أزعلك، وآخر إشي بتمناه إني أكون سبب بضيقك.
+          <br><br>
+          وبعرف إنك حكيتي إنك سامحتيني، وأنا مقدّر هالشي كثير. بس ما بدي أعتبر إنّه بكلمتين خلص كل إشي ورجع زي قبل؛ بدي كمان أفرجيكي بتصرفاتي إني عنجد ندمان، وإنه بهمّني تكوني مرتاحة معي.
+          <br><br>
+          نفسي نرجع نحكي ونمزح براحتنا، ونرجع للعفوية والضحكة الحلوة اللي بينا. مش رح أستعجلك ولا أطلب منك تتصرفي كإنه ما صار إشي، بس بدي أحاول أصلّح اللي صار قد ما بقدر، شوي شوي، ومن قلبي.
+        </p>
+        <div class="little-promise">
+          <strong>وطلب صغير بس 🙃</strong><br>
+          اعطيني فرصة أحاول أراضيكي شوي شوي… وإذا ما زبطت معي من أول محاولة، اعتبريها محاولة أولى وبس، مش آخر محاولة 🤍
+        </div>
+      </section>
+
+      <section class="choices-area">
+        <p class="choices-title">طيب يا لين… شو رأيك بمحاولتي؟</p>
+        <p class="choices-subtitle">اختاري اللي عنجد حاسّة فيه، ومش لازم تجامليني. أنا بس حبيت أراضيكي، والباقي براحتك 🤍</p>
+        
+        <div class="choices">
+          <button class="choice primary" data-choice="forgiven" type="button">خلص سامحتك، بس لا تعيدها 🤍</button>
+          <button class="choice" data-choice="partial" type="button">سامحتك… بس بدك تراضيني شوي 😒</button>
+          <button class="choice" data-choice="think" type="button">لسا بدي وقت شوي🤔</button>
+        </div>
+
+        <div class="response" id="response">
+          <h3 id="response-title"></h3>
+          <p id="response-message"></p>
+        </div>
+
+        <div class="share-area" id="share-area">
+          <button class="snap-btn" id="snap-btn" type="button">
+            خلّي أنس يعرف اختيارك 👻
+          </button>
+          <p class="share-note">سيتم نسخ اختيارك وفتح السناب شات مباشرة لتلصقي الرد في المحادثة 🤍</p>
+        </div>
+      </section>
+
+      <div class="footer">
+        من أنس، عنجد آسف… وبحاول اراضيكي بألطف طريقة بقدر عليها 🤍
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    // التحكم بتشغيل وإيقاف الأغنية الحقيقية
+    const audioElement = document.getElementById('romantic-audio');
+    const musicBtn = document.getElementById('music-toggle');
+    let isMusicPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+      if (!isMusicPlaying) {
+        audioElement.play().then(() => {
+          isMusicPlaying = true;
+          musicBtn.textContent = '⏸ إيقاف الأغنية';
+          musicBtn.style.background = 'rgba(232, 130, 165, 0.3)';
+        }).catch(err => {
+          alert('يرجى النقر في أي مكان بالصفحة أولاً ثم إعادة المحاولة.');
+        });
+      } else {
+        audioElement.pause();
+        isMusicPlaying = false;
+        musicBtn.textContent = '🎵 تشغيل الأغنية';
+        musicBtn.style.background = 'rgba(240, 194, 123, 0.15)';
+      }
+    });
+
+    const replyBox = document.getElementById('response');
+    const replyTitle = document.getElementById('response-title');
+    const replyMessage = document.getElementById('response-message');
+    const shareArea = document.getElementById('share-area');
+    const snapButton = document.getElementById('snap-btn');
+    let selectedAnswer = null;
+
+    const answers = {
+      forgiven: {
+        label: 'خلص سامحتك، بس لا تعيدها 🤍',
+        title: 'يا سلام، هيك بلّشنا ننبسط 😭',
+        message: 'لولو ♥️ شكرًا إنك سامحتيني. بوعدك ما أعتبرها خلص بكبسة زر؛ بدي أفرجيكي بتصرفاتي إني قد هالمسامحة. وهلأ ما بطلب غير ابتسامة صغيرة… بس وقت ما تكوني رايقة طبعًا 😌'
+      },
+      partial: {
+        label: 'سامحتك… بس بدك تراضيني شوي 😒',
+        title: 'حاضر مدام لولو، من عيوني 😁',
+        message: 'تمام يحلوه 😊 بعرف إنه لسه عليّ أحاول أراضيكي، ومش رح أستعجلك. رح أحاول بالفعل واللطف، مش بكثرة الحكي. المهم تكوني مرتاحة، والباقي شوي شوي 🤍'
+      },
+      think: {
+        label: 'لسا بدي وقت شوي🤔',
+        title: 'خدي راحتك لين 🤍',
+        message: 'خذي وقتك لين، عنجد ما في أي ضغط. أنا بعتذرلك من قلبي، وبحاول أصلّح اللي بقدر عليه و الي ما بقدر عليه كمان. مش لازم تردّي هسا ولا تستعجلي حالك؛ المهم تكوني مرتاحة 🤍'
+      }
+    };
+
+    document.querySelectorAll('[data-choice]').forEach(button => {
+      button.addEventListener('click', () => {
+        selectedAnswer = answers[button.dataset.choice];
+        replyTitle.textContent = selectedAnswer.title;
+        replyMessage.textContent = selectedAnswer.message;
+        
+        replyBox.classList.add('show');
+        shareArea.classList.add('show');
+        
+        replyBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+
+snapButton.addEventListener('click', async () => {
+  if (!selectedAnswer) return;
+  
+  const fullText = `يا أنس، هاض اختياري: «${selectedAnswer.label}»\n\n${selectedAnswer.message}`;
+  
+  // 1. تجربة ميزة المشاركة الأصلية للجهاز (تفتح سناب، واتساب، أو أي تطبيق)
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'رد على اعتذار أنس',
+        text: fullText
+      });
+      return;
+    } catch (err) {
+      // إذا ألغى المستخدم المشاركة أو حصل خطأ بسيط
+    }
+  }
+
+  // 2. نظام احتياطي: نسخ النص تلقائياً للـ Clipboard
+  try {
+    await navigator.clipboard.writeText(fullText);
+    snapButton.innerHTML = `تم نسخ الرسالة! افتحي السناب واعملي Paste 👻`;
+    
+    setTimeout(() => {
+      window.location.href = 'snapchat://';
+    }, 500);
+
+    setTimeout(() => {
+      snapButton.innerHTML = `خلّي أنس يعرف اختيارك 👻`;
+    }, 3500);
+
+  } catch (err) {
+    // 3. خيار أخير في حال حظر المتصفح للنسخ تلقائياً
+    window.prompt('انسخي الرد وأرسليه لأنس على السناب أو الواتساب:', fullText);
+  }
+});
+  </script>
+</body>
+</html>
